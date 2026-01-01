@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 
 
 const Hero = () => {
-    const videoRef = useRef();
+    const videoRef = useRef(null);
     useEffect(() => {
         if (videoRef.current) videoRef.current.playbackRate = 2;
     }, []);
@@ -13,7 +13,7 @@ const Hero = () => {
                 <h1>MacBook Pro</h1>
                 <img src="/title.png" alt="MacBook Title" />
             </div>
-            <video ref={videoRef} src="/videos/hero.mp4" autoPlay muted playsInline />
+            <video ref={videoRef} src="/videos/hero.mp4" autoPlay muted playsInline preload="auto" />
             <button>Buy</button>
             <p>from $1599 or $133/mo for 12 months</p>
         </section>
